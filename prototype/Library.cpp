@@ -93,3 +93,10 @@ struct Hen : IHen2 , IOfflineChicken
 	}
 
 };
+
+IHen* __stdcall CreateHen()
+{
+	IHen* result = new Hen;
+	result->AddRef();
+	return result;
+}
