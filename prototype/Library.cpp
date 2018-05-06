@@ -36,6 +36,8 @@ struct Hen : IHen2 , IOfflineChicken
 		}
 	}
 
+	// We simply match the appropriate interfaces and then cast to the most derived interface. The resulting interface pointer
+	// points to a v-table, which is simply a superset of what's required
 	void* _stdcall As(char const* type)
 	{
 		if (0 == strcmp(type, "IHen2") ||
